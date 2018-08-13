@@ -84,18 +84,20 @@ takes care of it, you only need to append the generated script tag to the
 body. This contains all module ids the client can finally load.
 
 ```javascript
-onPageLoad(async (sink) => {
+Meteor.startup(async () => {
   await MeteorLoadable.preloadComponents()
 
-  const html = renderToString(
-    <MeteorLoadable.Capture>
-      <MyApp />
-    </MeteorLoadable.Capture>
-  )
-  
-  sink.appendToBody(MeteorLoadable.getLoadedModulesScriptTag())
+  onPageLoad((sink) => {
+    const html = renderToString(
+      <MeteorLoadable.Capture>
+        <MyApp />
+      </MeteorLoadable.Capture>
+    )
 
-  // …
+    sink.appendToBody(MeteorLoadable.getLoadedModulesScriptTag())
+
+    // …
+  })
 })
 ```
 
