@@ -116,7 +116,7 @@ onPageLoad(async () => {
 
 That's it. Now it should work as expected.
 
-## Remarks
+## Remarks / restrictions
 
 - This is the very first version. We already use it in production. But
 it might not be working for others. Feel free to contribute to it.
