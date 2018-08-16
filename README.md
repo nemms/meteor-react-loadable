@@ -120,6 +120,9 @@ That's it. Now it should work as expected.
 
 - This is the very first version. We already use it in production. But
 it might not be working for others. Feel free to contribute to it.
+- Currently only one level of dynamic imports is working. If you define a 
+`MeteorLoadable` in a component which is defined as a `MeteorLoadable` itself
+they won't be preloaded properly and React will throw errors.
 - Other than with Webpack it's currently not possible to integrate the 
 dynamic components into the bundle so the client would have it immediately.
 The client needs to import the components before the app can be hydrated.
