@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Loadable from 'react-loadable'
 
-export const createCaptureComponent = reloadableComponents => {
+export const createCaptureComponent = preloadableComponents => {
   return class Capture extends React.Component {
     static propTypes = {
       children: PropTypes.node.isRequired,
     }
 
     report = (moduleId) => {
-      reloadableComponents.moduleLoaded(moduleId)
+      preloadableComponents.moduleLoaded(moduleId)
     }
 
     componentWillMount () {
-      reloadableComponents.reset()
+      preloadableComponents.reset()
     }
 
     render () {
