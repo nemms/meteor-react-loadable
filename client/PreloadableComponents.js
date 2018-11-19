@@ -6,7 +6,7 @@ class PreloadableComponentsClient extends PreloadableComponents {
    * for the given DOM representation.
    */
   preloadComponents () {
-    const modules = window[PreloadableComponents.clientVariable]
+    const modules = window[PreloadableComponents.clientVariable] || []
     const promises = modules.map(moduleId => this.components[moduleId].preload())
     return Promise.all(promises)
   }

@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'nemms:meteor-react-loadable',
-  version: '0.1.0',
+  version: '0.1.1',
   summary: 'Wrapper for react-loadable to enable server side rendering with proper hydration on the client.',
   git: 'https://github.com/nemms/meteor-react-loadable',
   documentation: 'README.md',
